@@ -15,104 +15,18 @@ The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for 
 ## Installation
 
 ```
-npm install react-native-smart-barcode --save
+npm install react-native-smart-barcode --save 或者 yarn add react-native-smart-barcode
 ```
 
 ## Notice
 
 It can only be used greater-than-equal react-native 0.4.0 for ios, if you want to use the package less-than react-native 0.4.0, use `npm install react-native-smart-barcode@untilRN0.40 --save`
-
-
-## Installation (iOS)
-
-* Drag RCTBarCode.xcodeproj to your project on Xcode.
-
-* Click on your main project file (the one that represents the .xcodeproj) select Build Phases and drag libRCTBarCode.a from the Products folder inside the RCTBarCode.xcodeproj.
-
-* Look for Header Search Paths and make sure it contains $(SRCROOT)/../../../react-native/React as recursive.
-
-* Dray raw folder to your project
-
-* Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
-
-## Installation (Android)
-
-* In `android/settings.gradle`
+## AutoInstallation
 
 ```
-...
-include ':react-native-smart-barcode'
-project(':react-native-smart-barcode').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-smart-barcode/android')
+react-native link react-native-smart-barcode
 ```
-
-* In `android/app/build.gradle`
-
-```
-...
-dependencies {
-    ...
-    // From node_modules
-    compile project(':react-native-smart-barcode')
-}
-```
-
-* In MainApplication.java
-
-```
-...
-private ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    //  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    @Override
-    protected boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
-    }
-
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-              new MainReactPackage()
-      );
-    }
-  };
-
-  public void setReactNativeHost(ReactNativeHost reactNativeHost) {
-    mReactNativeHost = reactNativeHost;
-  }
-
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
-...
-```
-
-* In MainActivity.java
-```
-...
-import com.reactnativecomponent.barcode.RCTCapturePackage;    //import RCTCapturePackage
-...
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    MainApplication application = (MainApplication) this.getApplication();
-    application.setReactNativeHost(new ReactNativeHost(application) {
-        @Override
-        protected boolean getUseDeveloperSupport() {
-            return BuildConfig.DEBUG;
-        }
-
-        @Override
-        protected List<ReactPackage> getPackages() {
-            return Arrays.<ReactPackage>asList(
-                    new MainReactPackage(),
-                    new RCTCapturePackage(MainActivity.this)    //register Module
-            );
-        }
-
-    });
-
-    super.onCreate(savedInstanceState);
-}
-```
+Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
 
 * In AndroidManifest.xml, add camera permissions
 ```
