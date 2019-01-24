@@ -375,8 +375,12 @@ public class CaptureView extends FrameLayout implements TextureView.SurfaceTextu
     }
 
     public void stopScan() {
-        hasSurface = false;
-        viewfinderView.drawLine = false;
+        try {
+            hasSurface = false;
+            viewfinderView.drawLine = false;
+        } catch (Exception e) {
+
+        }
         if (handler != null) {
             handler.quitSynchronously();
         }
