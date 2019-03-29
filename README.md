@@ -26,7 +26,7 @@ It can only be used greater-than-equal react-native 0.4.0 for ios, if you want t
 ```
 react-native link react-native-smart-barcode
 ```
-Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
+Add `Privacy - Camera Usage Description` `Privacy - Photo Library Usage Description` property in your info.plist(for ios 10)
 
 * In AndroidManifest.xml, add camera permissions
 ```
