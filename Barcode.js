@@ -18,7 +18,7 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types';
 const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule
-
+export const BarcodeUtil = NativeModules.BarcodeUtil
 
 export default class Barcode extends Component {
 

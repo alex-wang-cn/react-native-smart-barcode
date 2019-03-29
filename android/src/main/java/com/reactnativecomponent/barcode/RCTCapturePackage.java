@@ -1,7 +1,5 @@
 package com.reactnativecomponent.barcode;
 
-import android.app.Activity;
-
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -34,7 +32,8 @@ public class RCTCapturePackage implements ReactPackage {
         public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
              mModuleInstance = new RCTCaptureModule(reactApplicationContext,captureManager);
         return Arrays.<NativeModule>asList(
-                mModuleInstance
+                mModuleInstance,
+                new RCTBarCodeUtilModule(reactApplicationContext)
         );
         }
 

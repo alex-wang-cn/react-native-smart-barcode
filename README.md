@@ -15,7 +15,7 @@ The library uses [https://github.com/zxing/zxing][1] to decode the barcodes for 
 ## Installation
 
 ```
-npm install react-native-smart-barcode --save 或者 yarn add react-native-smart-barcode
+yarn add react-native-smart-barcode@https://github.com/puti94/react-native-smart-barcode.git
 ```
 
 ## Notice
@@ -36,6 +36,7 @@ Add `Privacy - Camera Usage Description` property in your info.plist(for ios 10)
 
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ...
 ```
 
@@ -47,7 +48,15 @@ see [ReactNativeComponentDemos][0]
 ## Usage
 
 Install the package from npm with `npm install react-native-smart-barcode --save`.
-Then, require it from your app's JavaScript files with `import Barcode from 'react-native-smart-barcode'`.
+Then, require it from your app's JavaScript files with `import Barcode,{BarcodeUtil} from 'react-native-smart-barcode'`.
+
+```js
+//从相册选取二维码 没有则返回""
+BarcodeUtil.decodePictureFromPhotos().then(code=>console.log(code))
+//切换闪光灯
+BarcodeUtil.switchFlashLightState(true or false)
+
+```
 
 ```js
 

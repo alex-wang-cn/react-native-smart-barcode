@@ -13,6 +13,7 @@
 		9FCCD75E1DAC8DA800025BFD /* RCTBarcode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FCCD75B1DAC8DA800025BFD /* RCTBarcode.h */; };
 		9FCCD7931DACC77A00025BFD /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD7921DACC77A00025BFD /* LineView.m */; };
 		9FCCD7C01DACCCD500025BFD /* RCTBarcodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCD7BF1DACCCD500025BFD /* RCTBarcodeManager.m */; };
+		C503CE02224DE6E0007255B4 /* RCTBarcodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C503CE01224DE6E0007255B4 /* RCTBarcodeUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		9FCCD7921DACC77A00025BFD /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
 		9FCCD7BE1DACCCD500025BFD /* RCTBarcodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBarcodeManager.h; sourceTree = "<group>"; };
 		9FCCD7BF1DACCCD500025BFD /* RCTBarcodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTBarcodeManager.m; sourceTree = "<group>"; };
+		C503CE00224DE6B9007255B4 /* RCTBarcodeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTBarcodeUtil.h; sourceTree = "<group>"; };
+		C503CE01224DE6E0007255B4 /* RCTBarcodeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTBarcodeUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				9F924BA71DAE17A5002340CC /* RectView.m */,
 				9F0396601DB5F98F00393F03 /* UIColor+Hex.h */,
 				9F0396611DB5F98F00393F03 /* UIColor+Hex.m */,
+				C503CE00224DE6B9007255B4 /* RCTBarcodeUtil.h */,
+				C503CE01224DE6E0007255B4 /* RCTBarcodeUtil.m */,
 			);
 			name = RCTBarCode;
 			path = RCTBarcode;
@@ -146,6 +151,7 @@
 			files = (
 				9FCCD75D1DAC8DA800025BFD /* RCTBarcode.m in Sources */,
 				9F0396621DB5F98F00393F03 /* UIColor+Hex.m in Sources */,
+				C503CE02224DE6E0007255B4 /* RCTBarcodeUtil.m in Sources */,
 				9FCCD7C01DACCCD500025BFD /* RCTBarcodeManager.m in Sources */,
 				9F924BA81DAE17A5002340CC /* RectView.m in Sources */,
 				9FCCD7931DACC77A00025BFD /* LineView.m in Sources */,
