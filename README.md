@@ -51,6 +51,7 @@ Install the package from npm with `npm install react-native-smart-barcode --save
 Then, require it from your app's JavaScript files with `import Barcode,{BarcodeUtil} from 'react-native-smart-barcode'`.
 
 ```js
+// 没有权限需要自己申请，推荐react-native-permissions 这个库
 //从相册选取二维码 没有则返回""
 BarcodeUtil.decodePictureFromPhotos().then(code=>console.log(code))
 //切换闪光灯
