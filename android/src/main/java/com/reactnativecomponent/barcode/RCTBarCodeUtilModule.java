@@ -49,18 +49,24 @@ public class RCTBarCodeUtilModule extends ReactContextBaseJavaModule {
             getReactApplicationContext().addActivityEventListener(new BaseActivityEventListener() {
                 @Override
                 public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-                    super.onActivityResult(activity, requestCode, resultCode, data);
-                    if (resultCode == -1) {
-                        switch (requestCode) {
-                            case REQUEST_CODE_GET_PIC_URI:
-                                Uri uri = data.getData();
-                                String imagePath = getPicturePathFromUri(uri);
-                                //对获取到的二维码照片进行压缩
-                                String res = DecodeUtil.getStringFromQRCode(imagePath);
-                                promise.resolve(res == null ? "" : res);
-                                break;
+                    try {
+                        super.onActivityResult(activity, requestCode, resultCode, data);
+                        if (data == null) promise.reject("error", "do not have data");
+                        if (resultCode == -1) {
+                            switch (requestCode) {
+                                case REQUEST_CODE_GET_PIC_URI:
+                                    Uri uri = data.getData();
+                                    String imagePath = getPicturePathFromUri(uri);
+                                    //对获取到的二维码照片进行压缩
+                                    String res = DecodeUtil.getStringFromQRCode(imagePath);
+                                    promise.resolve(res == null ? "" : res);
+                                    break;
+                            }
                         }
+                    }catch (Exception e){
+                        promise.reject("error", e.getMessage());
                     }
+
                 }
             });
         } else {
